@@ -104,7 +104,7 @@ const Contact = () => {
       if (!value) {
         setValidation({ ...validation, [name]: true });
         setValidationMessage({ ...validationMessage, [name]: "El email no puede ser nulo" });
-      } else if (!/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(value)) {
+      } else if (!/\S+@\S+\.\S+/.test(value)) {
         setValidation({ ...validation, [name]: true });
         setValidationMessage({ ...validationMessage, [name]: "Ingrese un correo válido" });
       } else {
