@@ -38,7 +38,7 @@ const Contact = () => {
 
   const addMessage = async (message) => {
     await addDoc(collection(db, "messages"), message);
-    alert("Funcionando 1");
+    alert("Funcionando 2");
     /*try {
       await addDoc(collection(db, "messages"), message);
       alert("Funcionando 1");
