@@ -39,7 +39,7 @@ const Contact = () => {
   const addMessage = async (message) => {
     try {
       await addDoc(collection(db, "messages"), message);
-      alert(process.env.REACT_APP_BUENAS);
+      alert("process.env.REACT_APP_BUENAS");
     } catch (error) {
       console.log(error);
     }
