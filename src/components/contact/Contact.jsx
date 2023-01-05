@@ -37,6 +37,7 @@ const Contact = () => {
   });
 
   const addMessage = async (message) => {
+    alert("Funcionando 1");
     try {
       await addDoc(collection(db, "messages"), message);
     } catch (error) {
@@ -52,7 +53,6 @@ const Contact = () => {
       if (message.name === "" || message.case === "" || message.email === "" || message.message === "") {
         alert("Algunos campos son nulos");
       } else {
-        alert("Funcionando");
         addMessage(message);
         setMessageSubmit(true);
         setTimeout(() => {
