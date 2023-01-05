@@ -46,7 +46,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //console.log(e.target.value);
+    alert("Funcionando");
     if (validation.name === true || validation.case === true || validation.email === true || validation.message === true) {
       alert("Por favor verifique los campos del formulario");
     } else {
@@ -82,7 +82,6 @@ const Contact = () => {
       if (!value) {
         setValidation({ ...validation, [name]: true });
         setValidationMessage({ ...validationMessage, [name]: "El nomre no puede ser nulo" });
-        alert(process.env.REACT_APP_BUENAS);
       } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(value)) {
         setValidation({ ...validation, [name]: true });
         setValidationMessage({ ...validationMessage, [name]: "El nombre solo puede tener letras y espacios" });
