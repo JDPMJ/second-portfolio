@@ -39,7 +39,6 @@ const Contact = () => {
   const addMessage = async (message) => {
     try {
       await addDoc(collection(db, "messages"), message);
-      alert("process.env.REACT_APP_BUENAS");
     } catch (error) {
       console.log(error);
     }
@@ -83,6 +82,7 @@ const Contact = () => {
       if (!value) {
         setValidation({ ...validation, [name]: true });
         setValidationMessage({ ...validationMessage, [name]: "El nomre no puede ser nulo" });
+        alert("process.env.REACT_APP_BUENAS");
       } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(value)) {
         setValidation({ ...validation, [name]: true });
         setValidationMessage({ ...validationMessage, [name]: "El nombre solo puede tener letras y espacios" });
