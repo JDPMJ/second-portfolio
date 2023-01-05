@@ -46,13 +46,13 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Funcionando");
     if (validation.name === true || validation.case === true || validation.email === true || validation.message === true) {
       alert("Por favor verifique los campos del formulario");
     } else {
       if (message.name === "" || message.case === "" || message.email === "" || message.message === "") {
         alert("Algunos campos son nulos");
       } else {
+        alert("Funcionando");
         addMessage(message);
         setMessageSubmit(true);
         setTimeout(() => {
