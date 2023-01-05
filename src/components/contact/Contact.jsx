@@ -36,7 +36,8 @@ const Contact = () => {
     message: ""
   });
 
-  const addMessage = async (message) => {
+  const addMessage = async (message, event) => {
+    setMessage({ ...message, name: "", case: "", email: "", message: "" });
     await addDoc(collection(db, "messages"), message);
     /*try {
       await addDoc(collection(db, "messages"), message);
@@ -54,7 +55,7 @@ const Contact = () => {
       if (message.name === "" || message.case === "" || message.email === "" || message.message === "") {
         alert("Algunos campos son nulos");
       } else {
-        addMessage(message);
+        addMessage(message, e);
         setMessageSubmit(true);
         setTimeout(() => {
           setMessageSubmit(false);
@@ -82,9 +83,11 @@ const Contact = () => {
       //console.log("Buenas");
       if (!value) {
         setValidation({ ...validation, [name]: true });
+        setMessage({ ...message, [name]: value });
         setValidationMessage({ ...validationMessage, [name]: "El nomre no puede ser nulo" });
       } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(value)) {
         setValidation({ ...validation, [name]: true });
+        setMessage({ ...message, [name]: value });
         setValidationMessage({ ...validationMessage, [name]: "El nombre solo puede tener letras y espacios" });
       } else {
         setMessage({ ...message, [name]: value });
@@ -95,9 +98,11 @@ const Contact = () => {
       //console.log("Buenas");
       if (!value) {
         setValidation({ ...validation, [name]: true });
+        setMessage({ ...message, [name]: value });
         setValidationMessage({ ...validationMessage, [name]: "El asunto no puede ser nulo" });
       } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(value)) {
         setValidation({ ...validation, [name]: true });
+        setMessage({ ...message, [name]: value });
         setValidationMessage({ ...validationMessage, [name]: "El asunto solo puede tener letras y espacios" });
       } else {
         setMessage({ ...message, [name]: value });
@@ -108,9 +113,11 @@ const Contact = () => {
       //console.log("Buenas");
       if (!value) {
         setValidation({ ...validation, [name]: true });
+        setMessage({ ...message, [name]: value });
         setValidationMessage({ ...validationMessage, [name]: "El email no puede ser nulo" });
       } else if (!/\S+@\S+\.\S+/.test(value)) {
         setValidation({ ...validation, [name]: true });
+        setMessage({ ...message, [name]: value });
         setValidationMessage({ ...validationMessage, [name]: "Ingrese un correo válido" });
       } else {
         setMessage({ ...message, [name]: value });
@@ -121,9 +128,11 @@ const Contact = () => {
       //console.log("Buenas");
       if (!value) {
         setValidation({ ...validation, [name]: true });
+        setMessage({ ...message, [name]: value });
         setValidationMessage({ ...validationMessage, [name]: "El mesaje no puede ser nulo" });
       } else if (value.length > 5000) {
         setValidation({ ...validation, [name]: true });
+        setMessage({ ...message, [name]: value });
         setValidationMessage({ ...validationMessage, [name]: "El mensaje no puede tener más de 2.000 caracteres" });
       } else {
         setMessage({ ...message, [name]: value });
@@ -167,6 +176,7 @@ const Contact = () => {
                 sx={validation.name ? { ...styles.text, margin: "15px 0px 25px 0px" } : styles.text }
                 InputProps={{sx: {fontFamily: "'Poppins', sans-serif", fontWeight: "14px"}}}
                 InputLabelProps={{sx: {fontFamily: "'Poppins', sans-serif", fontWeight: "14px"}}}
+                value={message.name}
               />
               <TextField
                 id="case"
@@ -179,6 +189,7 @@ const Contact = () => {
                 sx={validation.case ? { ...styles.text, margin: "15px 0px 25px 0px" } : styles.text }
                 InputProps={{sx: {fontFamily: "'Poppins', sans-serif", fontWeight: "14px"}}}
                 InputLabelProps={{sx: {fontFamily: "'Poppins', sans-serif", fontWeight: "14px"}}}
+                value={message.case}
               />
               <TextField
                 id="email"
@@ -191,6 +202,7 @@ const Contact = () => {
                 sx={validation.email ? { ...styles.text, margin: "15px 0px 25px 0px" } : styles.text }
                 InputProps={{sx: {fontFamily: "'Poppins', sans-serif", fontWeight: "14px"}}}
                 InputLabelProps={{sx: {fontFamily: "'Poppins', sans-serif", fontWeight: "14px"}}}
+                value={message.email}
               />
             </div>
             <div style={{width: "100%"}}>
@@ -206,6 +218,7 @@ const Contact = () => {
                 sx={validation.message ? { ...styles.text, margin: "15px 0px 25px 0px" } : styles.text }
                 InputProps={{sx: {fontFamily: "'Poppins', sans-serif", fontWeight: "14px"}}}
                 InputLabelProps={{sx: {fontFamily: "'Poppins', sans-serif", fontWeight: "14px"}}}
+                value={message.message}
               />
             </div>
             <div className="m-button">
