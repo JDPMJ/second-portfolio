@@ -37,12 +37,14 @@ const Contact = () => {
   });
 
   const addMessage = async (message) => {
-    try {
+    await addDoc(collection(db, "messages"), message);
+    alert("Funcionando 1");
+    /*try {
       await addDoc(collection(db, "messages"), message);
       alert("Funcionando 1");
     } catch (error) {
       console.log(error);
-    }
+    }*/
   };
 
   const handleSubmit = (e) => {
