@@ -37,7 +37,12 @@ const Contact = () => {
   });
 
   const addMessage = async (message) => {
-    await addDoc(collection(db, "messages"), message);
+    try {
+      await addDoc(collection(db, "messages"), message);
+      alert(process.env.REACT_APP_BUENAS);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleSubmit = (e) => {
