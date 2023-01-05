@@ -38,8 +38,8 @@ const Contact = () => {
 
   const addMessage = async (message) => {
     try {
-      alert("Funcionando 1");
       await addDoc(collection(db, "messages"), message);
+      alert("Funcionando 1");
     } catch (error) {
       console.log(error);
     }
