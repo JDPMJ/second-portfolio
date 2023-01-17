@@ -3,7 +3,7 @@ import Product from "../product/Product";
 import "./productList.css";
 //import product from "../../img/product.png";
 import calculatorApp from "../../img/calculator-app-presentation.png";
-import taskSQLiteFlutterApp from "../../img/task-sqlite-flutter-presentation.png";
+import taskSQLiteFlutterApp from "../../img/task-sqlite-flutter-app-presentation.png";
 
 const projetcs = [
   {
