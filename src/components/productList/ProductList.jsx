@@ -6,8 +6,8 @@ import product from "../../img/product.png";
 const projetcs = [
   {
     id: 1,
-    img: product,
-    link: "https://www.google.com/"
+    img: "https://github.com/JDPMJ/calculator-app/blob/master/assets/calculator-app-img-1.jpg",
+    link: "https://github.com/JDPMJ/calculator-app"
   },
   {
     id: 2,
