@@ -3,12 +3,18 @@ import Product from "../product/Product";
 import "./productList.css";
 //import product from "../../img/product.png";
 import calculatorApp from "../../img/calculator-app-presentation.png";
+import taskSQLiteFlutterApp from "../../img/task-sqlite-flutter-presentation.png";
 
 const projetcs = [
   {
     id: 1,
     img: calculatorApp,
     link: "https://github.com/JDPMJ/calculator-app"
+  },
+  {
+    id: 2,
+    img: taskSQLiteFlutterApp,
+    link: "https://github.com/JDPMJ/task-sqlite-flutter-app"
   }
 ];
 
