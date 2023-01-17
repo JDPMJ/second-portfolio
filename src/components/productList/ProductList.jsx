@@ -1,7 +1,7 @@
 import React from "react";
 import Product from "../product/Product";
 import "./productList.css";
-import product from "../../img/product.png";
+//import product from "../../img/product.png";
 import calculatorApp from "../../img/calculator-app-presentation.png";
 
 const projetcs = [
