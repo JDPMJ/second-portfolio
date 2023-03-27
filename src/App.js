@@ -8,6 +8,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 //import { ThemeContext } from './context';
 import Toggle from "./components/Toggle";
+//import { Routes, Route } from 'react-router-dom';
 
 const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
